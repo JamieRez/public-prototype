@@ -26,6 +26,10 @@ app.get('/', (req, res) => {
   res.render('main');
 })
 
+//Route Controllers
+//User Controller
+require('./controllers/user')(app, passport);
+
 //Start
 app.listen('3000', () => {
   console.log("And so it began.");
