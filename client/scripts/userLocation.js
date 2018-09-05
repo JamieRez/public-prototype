@@ -3,7 +3,11 @@ updateUserPosition = (userLoc) => {
   socket.emit('findNearUsers', userLoc);
 
   socket.on('updateUserPos', (users) => {
-    console.log(users);
+    users.forEach((user) => {
+      let newUser = $('.user').clone();
+      newUser.appendTo('.app');
+      newUser.offset(user);
+    })
   })
   // let userPos = {
   //   left : '50%',
