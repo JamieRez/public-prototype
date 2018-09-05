@@ -8,7 +8,7 @@ if (navigator.geolocation) {
         left: position.coords.latitude,
         top: position.coords.longitude
       };
-      updateUserPos(userLoc);
+      updateUserPosition(userLoc);
     },
     function(error) {
       console.log("Failed");
