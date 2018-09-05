@@ -4,8 +4,11 @@ if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(
     function(position) {
       // Get current cordinates.
-      positionCords = {"lat": position.coords.latitude, "lng": position.coords.longitude};
-      console.log(positionCords);
+      userLoc = {
+        left: position.coords.latitude,
+        top: position.coords.longitude
+      };
+      updateUserPos(userLoc);
     },
     function(error) {
       console.log("Failed");
