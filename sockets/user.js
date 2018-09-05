@@ -5,8 +5,8 @@ module.exports = (socket, io) => {
     console.log(userLocation);
     let fakeUsers = [
       {
-        top : (userLocation.top - 10) / 20,
-        left: (userLocation.left - 10) / 20
+        top : (userLocation.top / userLocation.top - 1);
+        left: (userLocation.left / userLocation.left - 1);
       }
     ]
     socket.emit('updateUserPos', fakeUsers);
