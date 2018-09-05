@@ -1,12 +1,11 @@
 module.exports = (socket, io) => {
 
-  socket.on('findNearUsers', (userLocation) => {
+  socket.on('findNearUsers', (userLocation, userPosition) => {
     //Fake User Data for testing
-    console.log(userLocation);
     let fakeUsers = [
       {
-        top : userLocation.top / (userLocation.top - 1),
-        left: userLocation.left / (userLocation.left - 1)
+        longitude : -122.411010,
+        latitude: 37.787790
       }
     ]
     socket.emit('updateUserPos', fakeUsers);

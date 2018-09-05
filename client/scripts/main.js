@@ -3,12 +3,12 @@ const socket = io.connect();
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(
     function(position) {
-      // Get current cordinates.
+      // Get current cordinates
       userLoc = {
-        left: position.coords.latitude,
-        top: position.coords.longitude
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
       };
-      updateUserPosition(userLoc);
+      showMapWithUserLocation(userLoc);
     },
     function(error) {
       console.log("Failed");
