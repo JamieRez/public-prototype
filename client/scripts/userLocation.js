@@ -1,9 +1,6 @@
-updateUserPosition = (userGeoData) => {
-  let userLocation = {
-    top : userGeoData.coords.longitude,
-    left : userGeoData.coords.latitude
-  }
-  socket.emit('findNearUsers', userLocation);
+updateUserPosition = (userLoc) => {
+
+  socket.emit('findNearUsers', userLoc);
 
   socket.on('updateUserPos', (users) => {
     console.log(users);
