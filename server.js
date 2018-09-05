@@ -1,9 +1,12 @@
 //Dependencies
 const express = require('express');
 const app = express();
+const server = require('http').Server(app);
 const path = require('path');
 const mongoose = require('mongoose');
 const passport = require('passport');
+const bodyParser = require('body-parser');
+const io = require('socket.io')(server);
 require('dotenv').config();
 
 //Connect to database
@@ -15,6 +18,8 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/prototype', () 
 app.set('view engine', 'pug');
 app.use(express.static('client'))
 app.set('views', './client/views')
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
 //Passport Configuration
 require('./services/passport.js');
@@ -23,14 +28,23 @@ app.use(passport.session());
 
 //Root Route
 app.get('/', (req, res) => {
-  res.render('main');
+  if(req.user){
+    res.render('main', {user: req.user});
+  }else{
+    res.render('main');
+  }
 })
 
-//Route Controllers
+//Routes
 //User Controller
 require('./controllers/user')(app, passport);
 
+//Sockets
+io.on('connection', (socket) => {
+  require('./sockets/user')(socket, io)
+})
+
 //Start
-app.listen('3000', () => {
+server.listen('3000', () => {
   console.log("And so it began.");
 });

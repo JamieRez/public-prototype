@@ -7,7 +7,11 @@ const userSchema = new Schema({
   password : String,
   email : String,
   interests : [String],
-  people : [String]
+  people : [String],
+  coord : {
+    x : Number,
+    y : Number
+  }
 });
 
 const User = mongoose.model('User', userSchema);
