@@ -55,9 +55,9 @@ app.use(passport.session());
 //Root Route
 app.get('/', (req, res) => {
   if(req.user){
-    res.render('./layouts/main', {user: req.user});
+    res.render('map', {user: req.user});
   }else{
-    res.render('./layouts/main');
+    res.render('map');
   }
 })
 
