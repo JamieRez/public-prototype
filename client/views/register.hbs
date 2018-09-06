@@ -37,6 +37,10 @@ License URL:
 	<link rel="stylesheet" href="styles/semantic.min.css">
 	<!-- Main stylesheet -->
 	<link rel="stylesheet" href="styles/main.css">
+	<!-- Pigeon stylesheet -->
+	<link rel="stylesheet" href="styles/pigeon.css">
+	<!-- Register stylesheet -->
+	<link rel="stylesheet" href="styles/register.css">
 	<!-- Chrome -->
 	<link rel="manifest" href="">
 	<meta name="theme-color" content="">
@@ -75,7 +79,52 @@ License URL:
 	<script src="scripts/semantic.min.js"></script>
 </head>
 <body>
-	<h1>Test</h1>
+		<span class="pigeonLogoLink"><a href="landing"><i class="fas fa-dove"></i> Pigeon Project</a></span>
+	<!-- Registration Form -->
+	<div class="registrationFormContent">
+		<center><img class="registerLandImg animated bounceIn" src="assets/images/man-in-binoculars.jpg"></center>
+		<div class="animated fadeIn ">
+		<form class="ui form">
+			<p class="ui horizontal divider header regTitle">Find Others</p>
+  <div class="field">
+    <label>Name</label>
+    <div class="two fields">
+      <div class="field">
+        <input type="text" name="firstName" placeholder="First Name">
+      </div>
+      <div class="field">
+        <input type="text" name="lastName" placeholder="Last Name">
+      </div>
+    </div>
+  </div>
+  <div class="field">
+    <label>Username</label>
+    <div class="fields">
+      <div class="sixteen wide field">
+        <input type="text" name="username" placeholder="Johnny Appleseed">
+      </div>
+    </div>
+  </div>
+	<div class="field">
+    <label>Email</label>
+    <div class="fields">
+      <div class="sixteen wide field">
+        <input type="email" name="email" placeholder="name@example.com">
+      </div>
+    </div>
+  </div>
+	<div class="field">
+		<label>Password</label>
+		<div class="fields">
+			<div class="sixteen wide field">
+				<input type="password" name="password" placeholder="Create Password">
+			</div>
+		</div>
+		</div>
+		<center><span id="termsText">By creating an account, you agree to our <a href="">Terms & Conditions</a></span></center>
+	<button class="ui submit button registerBtn">Register!</button>
+	<center><small class="accountSwitchText">Already have an account? <a href="login.hbs">Login</small></center>
+		</div>
 </body>
 <!-- Fontawesome -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
