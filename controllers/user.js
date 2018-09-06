@@ -23,8 +23,8 @@ module.exports = (app, passport) => {
   );
 
   //Finish setting up account
-  app.get('/user/setup', (req, res) => {
-    res.send("Finish setting up your account");
+  app.get('/register', (req, res) => {
+    res.render('register')
   })
 
   app.post('/user/setup', (req, res) => {

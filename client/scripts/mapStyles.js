@@ -2,7 +2,7 @@ let mapStyles = [
   {
     "stylers": [
       {
-        "color": "#000000"
+        "color": "#3d3d3d"
       }
     ]
   },
@@ -40,32 +40,6 @@ let mapStyles = [
     ]
   },
   {
-    "featureType": "landscape",
-    "stylers": [
-      {
-        "color": "#000000"
-      }
-    ]
-  },
-  {
-    "featureType": "landscape",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#000000"
-      }
-    ]
-  },
-  {
-    "featureType": "landscape",
-    "elementType": "geometry.fill",
-    "stylers": [
-      {
-        "color": "#000000"
-      }
-    ]
-  },
-  {
     "featureType": "poi",
     "stylers": [
       {
@@ -95,6 +69,14 @@ let mapStyles = [
     "stylers": [
       {
         "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "stylers": [
+      {
+        "color": "#4b4b4b"
       }
     ]
   }

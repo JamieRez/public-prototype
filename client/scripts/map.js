@@ -4,7 +4,6 @@ showMapWithUserLocation = (userLoc) => {
     zoom: 18,
     styles : mapStyles,
     disableDefaultUI: true,
-    zoomControl : true
   });
 
 }
