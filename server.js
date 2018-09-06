@@ -52,16 +52,9 @@ require('./services/passport.js');
 app.use(passport.initialize());
 app.use(passport.session());
 
-//Root Route
-app.get('/', (req, res) => {
-  if(req.user){
-    res.render('map', {user: req.user});
-  }else{
-    res.render('map');
-  }
-})
-
 //Routes
+//Root controllers
+require('./controllers/root')(app);
 //User Controller
 require('./controllers/user')(app, passport);
 

@@ -51,6 +51,10 @@ module.exports = (app, passport) => {
     })
   });
 
+  app.get('/login', (req, res) => {
+    res.render('login');
+  })
+
   app.post('/login', (req, res) => {
     User.findOne({username : req.body.username}).then((user) => {
       if(!user){
