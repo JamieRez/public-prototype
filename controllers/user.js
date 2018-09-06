@@ -1,4 +1,6 @@
 const User = require('../models/User');
+const jwt = require('jsonwebtoken');
+
 module.exports = (app, passport) => {
 
   app.get('/auth/google', passport.authenticate('google',
@@ -27,14 +29,43 @@ module.exports = (app, passport) => {
     res.render('register')
   })
 
-  app.post('/user/setup', (req, res) => {
-    User.findById(req.user._id).then((user) => {
-      user.name = req.body.name;
-      user.username = req.body.username;
-      user.interests = req.body.interests;
-      user.save().then(() => {
+  app.post('/register', (req, res) => {
+    User.findOne({username : req.body.username}).then((user) => {
+      if(user){
+        res.send("Username taken");
+      }else{
+        console.log(req.body);
+        let newUser = new User();
+        newUser.name = req.body.name;
+        newUser.username = req.body.username;
+        newUser.age = req.body.age;
+        newUser.email = req.body.email;
+        newUser.password = newUser.generateHash(req.body.password);
+        newUser.save().then((newUser) => {
+          // generate a JWT for this user from the user's id and the secret key
+          let token = jwt.sign({ id: newUser.id}, process.env.JWT_SECRET, { expiresIn: "60 days"});
+          res.cookie('token', token);
+          res.redirect('/');
+        })
+      }
+    })
+  });
+
+  app.get('/login', (req, res) => {
+    res.render('login');
+  })
+
+  app.post('/login', (req, res) => {
+    User.findOne({username : req.body.username}).then((user) => {
+      if(!user){
+        res.send("No user found with that username");
+      }else if(!user.validPassword(req.body.password)){
+        res.send("Invalid password");
+      }else{
+        let token = jwt.sign({ id: user.id }, process.env.SECRET, { expiresIn: "60 days" });
+        res.cookie('token', token);
         res.redirect('/');
-      })
+      }
     })
   })
 
