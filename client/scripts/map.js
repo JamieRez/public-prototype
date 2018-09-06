@@ -6,5 +6,14 @@ showMapWithUserLocation = (userLoc) => {
     styles : mapStyles,
     disableDefaultUI: true,
   });
+  let markerImage = {
+    url : '/client/assets/userPin.svg',
+  }
+  let userMarker = new google.maps.Marker({
+    position : userLoc,
+    map : map,
+    icon : markerImage
+  });
+
 
 }
