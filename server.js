@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const server = require('http').Server(app);
 const path = require('path');
+const exphbs  = require('express-handlebars');
 const port = process.env.PORT || '3000';
 const mongoose = require('mongoose');
 const passport = require('passport');
@@ -16,9 +17,14 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/prototype', () 
 });
 
 //Application Options
-app.set('view engine', 'pug');
 app.use(express.static('client'))
-app.set('views', './client/views')
+app.set('views', __dirname + '/client/views')
+app.engine('hbs', exphbs({
+  defaultLayout: 'main',
+  layoutsDir:'client/views/layouts',
+  partialsDir:'client/views/partials',
+  extname: '.hbs'}));
+app.set('view engine', 'hbs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
@@ -30,9 +36,9 @@ app.use(passport.session());
 //Root Route
 app.get('/', (req, res) => {
   if(req.user){
-    res.render('main', {user: req.user});
+    res.render('./layouts/main', {user: req.user});
   }else{
-    res.render('main');
+    res.render('./layouts/main');
   }
 })
 
