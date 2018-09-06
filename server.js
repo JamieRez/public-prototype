@@ -7,6 +7,9 @@ const port = process.env.PORT || '3000';
 const mongoose = require('mongoose');
 const passport = require('passport');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const jwt = require('jsonwebtoken');
 const io = require('socket.io')(server);
 require('dotenv').config();
 
@@ -21,6 +24,22 @@ app.use(express.static('client'))
 app.set('views', './client/views')
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+app.use(cookieParser());
+
+// check that a user is logged in
+let checkAuth = function (req, res, next) {
+  if (typeof req.cookies.token === 'undefined' || req.cookies.token === null) {
+    req.user = null;
+  } else {
+    // if the user has a JWT cookie, decode it and set the user
+    var token = req.cookies.token;
+    var decodedToken = jwt.decode(token, { complete: true }) || {};
+    req.user = decodedToken.payload;
+  }
+  next();
+}
+app.use(checkAuth);
+
 
 //Passport Configuration
 require('./services/passport.js');
