@@ -36,7 +36,7 @@ module.exports = (app, passport) => {
       }else{
         console.log(req.body);
         let newUser = new User();
-        newUser.name = req.body.name;
+        newUser.name = req.body.firstName + " " + req.body.lastName;
         newUser.username = req.body.username;
         newUser.age = req.body.age;
         newUser.email = req.body.email;

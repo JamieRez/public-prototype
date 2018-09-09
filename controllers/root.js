@@ -2,9 +2,9 @@ module.exports = (app) => {
 
   app.get('/', (req, res) => {
     if(req.user){
-      res.render('map', {user: req.user});
+      res.redirect('/map');
     }else{
-      res.redirect('/landing');
+      res.render('map');
     }
   });
 

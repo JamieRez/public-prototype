@@ -1,14 +1,22 @@
-module.exports = (socket, io) => {
+module.exports = (socket, io, onlineUsers) => {
+
+  socket.on('new user', (userLoc) => {
+    let thisUser = {
+      loc : userLoc,
+      socket : socket.id
+    }
+    onlineUsers[socket.id] = thisUser;
+    io.emit('showUserOnMap', thisUser);
+  })
 
   socket.on('findNearUsers', (userLocation, userPosition) => {
-    //Fake User Data for testing
-    let fakeUsers = [
-      {
-        longitude : -122.411010,
-        latitude: 37.787790
+    for(id in onlineUsers){
+      if(id != socket.id) {
+        socket.emit('showUserOnMap', onlineUsers[id]);
       }
-    ]
-    socket.emit('updateUserPos', fakeUsers);
-  })
+    }
+  });
+
+
 
 }
