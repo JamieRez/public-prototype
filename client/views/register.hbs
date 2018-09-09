@@ -94,15 +94,15 @@ License URL:
 		<center><p class="register-form-title">Let's get you set up</p><small>It should only take you a minute</small></center>
 	<hr>
 	<div class="input-group">
-    <input name="firsNname" type="text" class="form-control" placeholder="First Name" style="border-radius:20px !important; width:80px; margin-right:2.5px;">
+    <input name="firstNname" type="text" class="form-control" placeholder="First Name" style="border-radius:20px !important; width:80px; margin-right:2.5px;" minlength="2" maxlength="32" required>
     <span class="input-group-addon"></span>
-    <input name="lastName" type="text" class="form-control" placeholder="Last Name" style="border-radius:20px !important; width:80px; margin-left:2.5px;">
+    <input name="lastName" type="text" class="form-control" placeholder="Last Name" style="border-radius:20px !important; width:80px; margin-left:2.5px;" minlength="2" maxlength="32" required>
 	</div>
-  <input name="username" type="text" class="form-control" placeholder="Username" id="inputDefault">
-	<input name="email" type="text" class="form-control" placeholder="Email Address" id="inputDefault">
-	<input name="password" id="password" type="text" class="form-control" placeholder="Password" id="inputDefault">
+  <input name="username" type="text" class="form-control" placeholder="Username" id="inputDefault" minlength="3" maxlength="32" required>
+	<input name="email" type="email" class="form-control" placeholder="Email Address" id="inputDefault" minlength="3" maxlength="64" required>
+	<input name="password" id="password" type="password" class="form-control" placeholder="Password" id="inputDefault" minlength="3" maxlength="64" required>
 	<center><small class="form-text text-muted terms">By creating an account, you agree to our <a href="terms">Terms & Conditions</a></small></center>
-	<button name="CreateAccount" id="createAccount" type="button" class="btn btn-primary btn-sm btn-block register-button">Register</button>
+	<button name="CreateAccount" id="createAccount" type="submit" class="btn btn-primary btn-sm btn-block register-button">Register</button>
 	<center><small class="form-text text-muted">Already have an account? <a href="login">Login</a></small></center>
 </div>
 </form>

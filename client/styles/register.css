@@ -29,6 +29,12 @@
 input[type=text]{
   background-color:#ebebeb;
 }
+input[type=email]{
+  background-color:#ebebeb;
+}
+input[type=password]{
+  background-color:#ebebeb;
+}
 .register-form-title{
   color:#ecf0f1;
   padding:0px !important;
