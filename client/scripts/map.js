@@ -19,15 +19,6 @@ showMapAtUserLocation = (userLoc) => {
     styles : mapStyles,
     disableDefaultUI: true,
   });
-  // let randColorIndex = Math.floor(Math.random() * 7);
-  // let markerImage = {
-  //   url : userColors[randColorIndex],
-  // }
-  // let userMarker = new google.maps.Marker({
-  //   position : userLoc,
-  //   map : map,
-  //   icon : markerImage
-  // });
   //Map and user in place. Time to load connected users
   socket.emit('findNearUsers', userLoc);
 }

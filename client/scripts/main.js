@@ -1,23 +1,26 @@
 const socket = io.connect();
 const onlineUsers = {};
 
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(
-    function(position) {
-      // Get current cordinates
-      userLoc = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-      showMapAtUserLocation(userLoc);
-      socket.emit('new user', userLoc);
-    },
-    function(error) {
-      console.log("Failed");
-    },
-    {timeout: 30000, enableHighAccuracy: true, maximumAge: 75000}
-  );
-}
+setTimeout(function (){
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      function(position) {
+        // Get current cordinates
+        userLoc = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+        showMapAtUserLocation(userLoc);
+        socket.emit('new user', userLoc);
+      },
+      function(error) {
+        console.log("Failed");
+      },
+      {timeout: 30000, enableHighAccuracy: true, maximumAge: 75000}
+    );
+  }
+}, 500);
 
 
 // setTimeout(function (){
