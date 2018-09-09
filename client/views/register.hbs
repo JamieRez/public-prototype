@@ -8,12 +8,17 @@ _ __  _  __ _  ___  ___  _ __
 | |       __/ |
 |_|      |___/
 
-"You have to accept the fact that sometimes
-you are the pigeon, and sometimes you are the statue."
-  - Claude Chabrol
+“Nature loves courage. You make the commitment and nature will respond to that
+commitment by removing impossible obstacles. Dream the impossible dream and t
+he world will not grind you under, it will lift you up. This is the trick.
+This is what all these teachers and philosophers who really counted,
+who really touched the alchemical gold, this is what they understood.
+This is the shamanic dance in the waterfall. This is how magic is done.
+By hurling yourself into the abyss and discovering it’s a feather bed.”
+― Terence McKenna
 
 Developed by the Pigeon Project
-Author: Jacob James Rezendes, Parker Tenove
+Author: James Rezendes, Parker Tenove
 Author URL:
 License: MIT License Copyright (c) 2018 James Rezendes, Parker Tenove
 License URL:
@@ -33,8 +38,8 @@ License URL:
 	<script src=""></script>
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="styles/style.css">
-	<!-- Semantic UI-->
-	<link rel="stylesheet" href="styles/semantic.min.css">
+	<!-- Darkly-->
+	<link rel="stylesheet" href="styles/darkly.min.css">
 	<!-- Main stylesheet -->
 	<link rel="stylesheet" href="styles/main.css">
 	<!-- Pigeon stylesheet -->
@@ -43,7 +48,7 @@ License URL:
 	<link rel="stylesheet" href="styles/register.css">
 	<!-- Chrome -->
 	<link rel="manifest" href="">
-	<meta name="theme-color" content="">
+	<meta name="theme-color" content="#3d3d3d">
 	<!-- Safari -->
 	<link rel="apple-touch-icon-precomposed" sizes="57x57" href=""/>
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href=""/>
@@ -76,55 +81,32 @@ License URL:
   <!-- Jquery 3.1.1-->
 	<script src="scripts/jquery-v3.js"></script>
 	<!-- Semantic JS -->
-	<script src="scripts/semantic.min.js"></script>
+	<script src="scripts/darkly.min.js"></script>
 </head>
 <body>
-		<span class="pigeonLogoLink"><a href="landing"><i class="fas fa-dove"></i> Pigeon Project</a></span>
-	<!-- Registration Form -->
-	<div class="registrationFormContent">
-		<center><img class="registerLandImg animated bounceIn" src="assets/images/man-in-binoculars.jpg"></center>
-		<div class="animated fadeIn ">
-		<form class="ui form">
-			<p class="ui horizontal divider header regTitle">Find Others</p>
-  <div class="field">
-    <label>Name</label>
-    <div class="two fields">
-      <div class="field">
-        <input type="text" name="firstName" placeholder="First Name">
-      </div>
-      <div class="field">
-        <input type="text" name="lastName" placeholder="Last Name">
-      </div>
-    </div>
-  </div>
-  <div class="field">
-    <label>Username</label>
-    <div class="fields">
-      <div class="sixteen wide field">
-        <input type="text" name="username" placeholder="Johnny Appleseed">
-      </div>
-    </div>
-  </div>
-	<div class="field">
-    <label>Email</label>
-    <div class="fields">
-      <div class="sixteen wide field">
-        <input type="email" name="email" placeholder="name@example.com">
-      </div>
-    </div>
-  </div>
-	<div class="field">
-		<label>Password</label>
-		<div class="fields">
-			<div class="sixteen wide field">
-				<input type="password" name="password" placeholder="Create Password">
-			</div>
-		</div>
-		</div>
-		<center><span id="termsText">By creating an account, you agree to our <a href="">Terms & Conditions</a></span></center>
-	<button class="ui submit button registerBtn">Register!</button>
-	<center><small class="accountSwitchText">Already have an account? <a href="login.hbs">Login</small></center>
-		</div>
+<!-- Navigation -->
+<nav class="pigeon-nav">
+  <center><i class="fas fa-dove nav-pigeon-logo"></i></center>
+</nav>
+<!-- Register Form-->
+<form class="animated fadeIn">
+<div class="form-group register-form">
+		<center><p class="register-form-title">Let's get you set up</p><small>It should only take you a minute</small></center>
+	<hr>
+	<div class="input-group">
+    <input name="firsNname" type="text" class="form-control" placeholder="First Name" style="border-radius:20px !important; width:80px; margin-right:2.5px;">
+    <span class="input-group-addon"></span>
+    <input name="lastName" type="text" class="form-control" placeholder="Last Name" style="border-radius:20px !important; width:80px; margin-left:2.5px;">
+	</div>
+  <input name="username" type="text" class="form-control" placeholder="Username" id="inputDefault">
+	<input name="email" type="text" class="form-control" placeholder="Email Address" id="inputDefault">
+	<input name="password" id="password" type="text" class="form-control" placeholder="Password" id="inputDefault">
+	<center><small class="form-text text-muted terms">By creating an account, you agree to our <a href="terms">Terms & Conditions</a></small></center>
+	<button name="CreateAccount" id="createAccount" type="button" class="btn btn-primary btn-sm btn-block register-button">Register</button>
+	<center><small class="form-text text-muted">Already have an account? <a href="login">Login</a></small></center>
+</div>
+</form>
+
 </body>
 <!-- Fontawesome -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
