@@ -1,3 +1,6 @@
+
+<!DOCTYPE html>
+<html>
 <!--
 
 [Pigeon Project]
@@ -96,13 +99,13 @@ License URL:
 		<center><p class="register-form-title">Let's get you set up</p><small>It should only take you a minute</small></center>
 	<hr>
 	<div class="input-group">
-    <input id="firstName" name="firstNname" type="text" class="form-control" placeholder="First Name" style="border-radius:20px !important; width:80px; margin-right:2.5px;">
+    <input id="firstName" name="firstNname" type="text" class="form-control" placeholder="First Name" style="border-radius:20px !important; width:80px; margin-right:2.5px;" minlength="3" maxlength="32" required>
     <span class="input-group-addon"></span>
-    <input id="lastName" name="lastName" type="text" class="form-control" placeholder="Last Name" style="border-radius:20px !important; width:80px; margin-left:2.5px;">
+    <input id="lastName" name="lastName" type="text" class="form-control" placeholder="Last Name" style="border-radius:20px !important; width:80px; margin-left:2.5px;" minlength="3" maxlength="32" required>
 	</div>
-  <input id="username" name="username" type="text" class="form-control" placeholder="Username" id="inputDefault">
-	<input id="email" name="email" type="text" class="form-control" placeholder="Email Address" id="inputDefault">
-	<input id="password" name="password" type="text" class="form-control" placeholder="Password" id="inputDefault">
+  <input id="username" name="username" type="text" class="form-control" placeholder="Username" id="inputDefault" minlength="3" maxlength="32" required>
+	<input id="email" name="email" type="email" class="form-control" placeholder="Email Address" id="inputDefault" minlength="3" maxlength="64" required>
+	<input id="password" name="password" type="password" class="form-control" placeholder="Password" id="inputDefault" minlength="3" maxlength="64" required>
 	<center><small class="form-text text-muted terms">By creating an account, you agree to our <a href="terms">Terms & Conditions</a></small></center>
 	<button name="CreateAccount" id="createAccount" type="submit" class="btn btn-primary btn-sm btn-block register-button">Register</button>
 	<center><small class="form-text text-muted">Already have an account? <a href="login">Login</a></small></center>
@@ -113,4 +116,6 @@ License URL:
 <!-- Fontawesome -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <!-- The End -->
+</html>
+
 </html>
