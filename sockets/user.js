@@ -1,9 +1,11 @@
+const User = require('../models/User');
+
 module.exports = (socket, io, onlineUsers) => {
 
   socket.on('new user', (userLoc) => {
     let thisUser = {
       loc : userLoc,
-      socket : socket.id
+      socket : socket.id,
     }
     onlineUsers[socket.id] = thisUser;
     io.emit('showUserOnMap', thisUser);
