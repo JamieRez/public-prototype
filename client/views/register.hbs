@@ -82,7 +82,7 @@ License URL:
   <!-- 310x310 -->
 	<meta name="msapplication-square310x310logo" content=""/>
   <!-- Jquery 3.1.1-->
-	<script src="scripts/jquery-v3.js"></script>
+	<script src="./scripts/jquery-3.3.1.min.js"></script>
 	<!-- Semantic JS -->
 	<script src="scripts/darkly.min.js"></script>
 	<!--register.js -->
@@ -107,7 +107,7 @@ License URL:
 	<input id="email" name="email" type="email" class="form-control" placeholder="Email Address" id="inputDefault" minlength="3" maxlength="64" required>
 	<input id="password" name="password" type="password" class="form-control" placeholder="Password" id="inputDefault" minlength="3" maxlength="64" required>
 	<center><small class="form-text text-muted terms">By creating an account, you agree to our <a href="terms">Terms & Conditions</a></small></center>
-	<button name="CreateAccount" id="createAccount" type="submit" class="btn btn-primary btn-sm btn-block register-button">Register</button>
+	<button onClick="submitForm()" name="CreateAccount" id="createAccount" type="button" class="btn btn-primary btn-sm btn-block register-button">Register</button>
 	<center><small class="form-text text-muted">Already have an account? <a href="login">Login</a></small></center>
 </div>
 </form>

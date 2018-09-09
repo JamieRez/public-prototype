@@ -57,6 +57,8 @@ app.use(passport.session());
 require('./controllers/root')(app);
 //User Controller
 require('./controllers/user')(app, passport);
+//Map controller
+require('./controllers/map')(app);
 
 //Sockets
 let onlineUsers = {};

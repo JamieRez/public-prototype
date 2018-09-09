@@ -1,14 +1,21 @@
 
-
-
 $('#registerForm').submit((e) => {
   e.preventDefault();
+});
+
+submitForm = () => {
+  let fullName = $('#firstName').val() + " " + $('#lastName').val();
   let data = {
-    name : $('#firstName').val() + " " + $('#lastName').val(),
+    name : fullName,
     username : $('#username').val(),
     email : $('#email').val(),
     password : $('#password').val()
   };
-  console.log(data);
-  $.post('/register', data);
-});
+  $.post('/register', data, (d) => {
+    if(d.err){
+      console.log(d.err)
+    }else{
+      window.location = "/map";
+    }
+  });
+}

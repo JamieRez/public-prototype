@@ -32,11 +32,11 @@ module.exports = (app, passport) => {
   app.post('/register', (req, res) => {
     User.findOne({username : req.body.username}).then((user) => {
       if(user){
-        res.send("Username taken");
+        res.send({err : "Username taken"});
       }else{
         console.log(req.body);
         let newUser = new User();
-        newUser.name = req.body.firstName + " " + req.body.lastName;
+        newUser.name = req.body.name;
         newUser.username = req.body.username;
         newUser.age = req.body.age;
         newUser.email = req.body.email;
@@ -58,11 +58,11 @@ module.exports = (app, passport) => {
   app.post('/login', (req, res) => {
     User.findOne({username : req.body.username}).then((user) => {
       if(!user){
-        res.send("No user found with that username");
+        res.send({err : "No user found with that username"});
       }else if(!user.validPassword(req.body.password)){
-        res.send("Invalid password");
+        res.send({err : "Invalid password"});
       }else{
-        let token = jwt.sign({ id: user.id }, process.env.SECRET, { expiresIn: "60 days" });
+        let token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: "60 days" });
         res.cookie('token', token);
         res.redirect('/');
       }

@@ -86,7 +86,7 @@ License URL:
 	<!-- Semantic JS -->
 	<script src="scripts/darkly.min.js"></script>
 	<!--register.js -->
-	<script src="scripts/register.js"></script>
+	<script src="scripts/login.js"></script>
 </head>
 <body>
 <!-- Navigation -->
@@ -100,7 +100,7 @@ License URL:
 	<hr>
   <input id="username" name="username" type="text" class="form-control" placeholder="Username" id="inputDefault" minlength="3" maxlength="32" required>
 	<input id="password" name="password" type="password" class="form-control" placeholder="Password" id="inputDefault" minlength="3" maxlength="64" required>
-<button name="login" id="login" type="submit" class="btn btn-primary btn-sm btn-block login-button">Login</button>
+<button onClick="submitForm()" name="login" id="login" type="button" class="btn btn-primary btn-sm btn-block login-button">Login</button>
 	<center><small class="form-text text-muted">Don't have an account? <a href="register">Register</a></small></center>
 </div>
 </form>

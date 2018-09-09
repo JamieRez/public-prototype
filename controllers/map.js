@@ -1,6 +1,6 @@
 module.exports = (app) => {
 
-  app.get('/map', (req, re) => {
+  app.get('/map', (req, res) => {
     res.render('map');
   });
 
