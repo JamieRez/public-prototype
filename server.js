@@ -59,8 +59,15 @@ require('./controllers/root')(app);
 require('./controllers/user')(app, passport);
 
 //Sockets
+let onlineUsers = {};
 io.on('connection', (socket) => {
-  require('./sockets/user')(socket, io)
+  require('./sockets/user')(socket, io, onlineUsers)
+
+  socket.on('disconnect', () => {
+    delete onlineUsers[socket.id];
+    io.emit("userLeft", socket.id);
+  })
+
 })
 
 //Start
