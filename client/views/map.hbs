@@ -1,14 +1,99 @@
+
+<!DOCTYPE html>
+<html>
+<!--
+
+[Pigeon Project]
+_ __  _  __ _  ___  ___  _ __
+| '_ \| |/ _` |/ _ \/ _ \| '_ \
+| |_) | | (_| |  __/ (_) | | | |
+| .__/|_|\__, |\___|\___/|_| |_|
+| |       __/ |
+|_|      |___/
+
+“Nature loves courage. You make the commitment and nature will respond to that
+commitment by removing impossible obstacles. Dream the impossible dream and t
+he world will not grind you under, it will lift you up. This is the trick.
+This is what all these teachers and philosophers who really counted,
+who really touched the alchemical gold, this is what they understood.
+This is the shamanic dance in the waterfall. This is how magic is done.
+By hurling yourself into the abyss and discovering it’s a feather bed.”
+― Terence McKenna
+
+Developed by the Pigeon Project
+Author: James Rezendes, Parker Tenove
+Author URL:
+License: MIT License Copyright (c) 2018 James Rezendes, Parker Tenove
+License URL:
+-->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <link href="/styles/main.css" type="text/css" rel="stylesheet" />
+	<!-- Main -->
+	<title>Pigeon</title>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="application-name" content=""/>
+	<meta name="keywords" content="">
+	<meta name="author" content="James Rezendes ,Parker Tenove">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="./scripts/socket.io.slim.js"></script>
   <script src="./scripts/main.js"></script>
   <script src="./scripts/map.js"></script>
   <script src="./scripts/mapStyles.js"></script>
   <script src="./scripts/jquery-3.3.1.min.js"></script>
   <script src="./scripts/jquery-ui.min.js"></script>
+	<!-- Service Worker -->
+	<script src=""></script>
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="styles/style.css">
+	<!-- Darkly-->
+	<link rel="stylesheet" href="styles/darkly.min.css">
+	<!-- Main stylesheet -->
+	<link rel="stylesheet" href="styles/main.css">
+	<!-- Pigeon stylesheet -->
+	<link rel="stylesheet" href="styles/pigeon.css">
+	<!-- Register stylesheet -->
+	<link rel="stylesheet" href="styles/register.css">
+	<!-- Chrome -->
+	<link rel="manifest" href="">
+	<meta name="theme-color" content="#3d3d3d">
+	<!-- Safari -->
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href=""/>
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href=""/>
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href=""/>
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href=""/>
+	<link rel="apple-touch-icon-precomposed" sizes="60x60" href=""/>
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href=""/>
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href=""/>
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href=""/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<!-- Favicons -->
+	<link rel="icon" type="image/png" href="" sizes="196x196"/>
+	<link rel="icon" type="image/png" href="" sizes="96x96"/>
+	<link rel="icon" type="image/png" href="" sizes="32x32"/>
+	<link rel="icon" type="image/png" href="" sizes="16x16"/>
+	<link rel="icon" type="image/png" href="" sizes="128x128"/>
+	<!-- IE & Microsoft Tiles -->
+	<meta name="msapplication-TileColor" content=""/>
+  <!-- 144x144 -->
+	<meta name="msapplication-TileImage" content=""/>
+  <!-- -70x70 -->
+	<meta name="msapplication-square70x70logo" content=""/>
+  <!-- 150x150-->
+	<meta name="msapplication-square150x150logo" content=""/>
+  <!-- 310x150 -->
+	<meta name="msapplication-wide310x150logo" content=""/>
+  <!-- 310x310 -->
+	<meta name="msapplication-square310x310logo" content=""/>
+	<!-- Semantic JS -->
+	<script src="scripts/darkly.min.js"></script>
+	<!--googleMaps.js -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMJD247_8OsCHjHQUhkeoHJ8FVgWq76Y0"></script>
-</head>
 
+</head>
+<head>
 <body>
   <!-- HUD ELEMENTS OVER MAP-->
   <div class="app"></div>
