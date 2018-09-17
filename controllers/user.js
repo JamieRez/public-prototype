@@ -75,6 +75,10 @@ module.exports = (app, passport) => {
         res.redirect('/');
       }
     })
+  });
+
+  app.get('/api/currentUser', (req, res) => {
+    res.send(req.user);
   })
 
 }

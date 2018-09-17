@@ -24,7 +24,13 @@ showMapAtUserLocation = (userLoc) => {
 }
 
 socket.on('showUserOnMap', (user) => {
-  onlineUsers[user.socket] = user;
+  //IF USER IS ALREADY CONNECTED TO APP, REMOVE THE OLDER INSTANCE
+  if(onlineUsers[user.username]){
+    mapUserMarkers[user.username].setMap(null);
+    delete mapUserMarkers[user.username];
+    delete onlineUsers[user.username];
+  }
+  onlineUsers[user.username] = user;
   let randColorIndex = Math.floor(Math.random() * 7);
   let markerImage = {
     url : userColors[randColorIndex],
@@ -34,11 +40,11 @@ socket.on('showUserOnMap', (user) => {
     map : map,
     icon : markerImage
   });
-  mapUserMarkers[user.socket] = userMarker;
+  mapUserMarkers[user.username] = userMarker;
 });
 
-socket.on('userLeft', (userId) => {
-  mapUserMarkers[userId].setMap(null);
-  delete mapUserMarkers[userId];
-  delete onlineUsers[userId];
+socket.on('userLeft', (username) => {
+  mapUserMarkers[username].setMap(null);
+  delete mapUserMarkers[username];
+  delete onlineUsers[username];
 })

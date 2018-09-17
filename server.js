@@ -66,8 +66,8 @@ io.on('connection', (socket) => {
   require('./sockets/user')(socket, io, onlineUsers)
 
   socket.on('disconnect', () => {
-    delete onlineUsers[socket.id];
-    io.emit("userLeft", socket.id);
+    delete onlineUsers[socket.username];
+    io.emit("userLeft", socket.username);
   })
 
 })
