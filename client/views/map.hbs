@@ -29,8 +29,8 @@ License URL:
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<!-- Main -->
-	<title>Pigeon</title>
+	<!-- Home -->
+	<title>Explore | Pigeon</title>
 	<meta charset="utf-8">
 	<meta name="description" content="">
 	<meta name="application-name" content=""/>
@@ -47,10 +47,12 @@ License URL:
 	<script src=""></script>
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="styles/style.css">
-	<!-- Darkly-->
+	<!-- Darkly Stylesheet-->
 	<link rel="stylesheet" href="styles/darkly.min.css">
 	<!-- Main stylesheet -->
 	<link rel="stylesheet" href="styles/main.css">
+  <!-- Explore Stylesheet -->
+  <link rel="stylesheet" href="styles/explore.css">
 	<!-- Pigeon stylesheet -->
 	<link rel="stylesheet" href="styles/pigeon.css">
 	<!-- Register stylesheet -->
@@ -91,11 +93,43 @@ License URL:
 	<script src="scripts/darkly.min.js"></script>
 	<!--googleMaps.js -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMJD247_8OsCHjHQUhkeoHJ8FVgWq76Y0"></script>
-
 </head>
 <head>
 <body>
-  <!-- HUD ELEMENTS OVER MAP-->
-  <div class="app"></div>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light dektop-pigeon-nav">
+    <a class="navbar-brand" href="explore"><i class="fas fa-dove"></i></a>
+    <div class="collapse navbar-collapse" id="navbarColor03">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="friends"><i class="fas fa-user-friends nav-icons"></i> Friends</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="messages"><i class="fas fa-comments nav-icons"></i> Messages</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="profile"><i class="fas fa-user-circle nav-icons"></i> Profile</a>
+        </li>
+        <li class="nav-item nav-settings-divider">
+          |
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="settings"><i class="fas fa-sliders-h nav-icons"></i> Settings</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<span class="back-nav"></span>
+  <!-- Map -->
   <div id="map"></div>
+<!-- Bottom Information Bar -->
+<div class="informative-bar-container">
+<center><div class="informative-bar animated bounceInUp"></div></center>
+</div>
 </body>
+<!-- Fontawesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<!-- The End -->
+</html>
+
+</html>

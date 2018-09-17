@@ -1,0 +1,40 @@
+body{
+    overflow-y:hidden !important;
+}
+@media only screen and (max-width: 995px) {
+  .dektop-pigeon-nav, .informative-bar, .informative-bar-container{
+    display:none;
+  }
+}
+#map {
+  background-color: black;
+  width : 100%;
+  height : 105%;
+  position: absolute;
+  z-index: 0;
+}
+.dektop-pigeon-nav{
+  height:45px;
+  border-bottom:2px solid #4b4b4b;
+}
+.nav-icons{
+  margin-right:2px;
+}
+.nav-settings-divider{
+  margin-top:7px;
+  color:#636e72;
+}
+.informative-bar-container{
+  position:absolute;
+  bottom:0px;
+  width:100%;
+  height:120px;
+}
+.informative-bar{
+  width:98%;
+  height:110px;
+  background-color:#bdc3c7;
+  border-radius:5px;
+  opacity:0.5;
+  animation-delay:1s;
+}
