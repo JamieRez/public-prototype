@@ -3,7 +3,7 @@ const onlineUsers = {};
 
 $.get('/api/currentUser', (user) => {
 
-  setTimeout(function (){
+
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -22,7 +22,6 @@ $.get('/api/currentUser', (user) => {
         {timeout: 30000, enableHighAccuracy: true, maximumAge: 75000}
       );
     }
-  }, 500);
 });
 
 

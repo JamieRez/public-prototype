@@ -16,7 +16,6 @@ module.exports = (socket, io, onlineUsers) => {
     onlineUsers[user.username] = thisUser;
     socket["username"] = user.username;
     io.emit('showUserOnMap', thisUser);
-    console.log(onlineUsers);
   })
 
   socket.on('findNearUsers', (userLocation, userPosition) => {

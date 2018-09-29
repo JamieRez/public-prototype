@@ -63,6 +63,7 @@ require('./controllers/map')(app);
 //Sockets
 let onlineUsers = {};
 io.on('connection', (socket) => {
+  
   require('./sockets/user')(socket, io, onlineUsers)
 
   socket.on('disconnect', () => {
